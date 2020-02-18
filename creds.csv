@@ -2,7 +2,7 @@ Keywords,Type,Asset,Comment
 "PersonalAccessToken, PAT",String,Access Token,Personal access tokens (API keys)
 "token, SessionToken",String,Access Token,Various access or session tokens
 "{DOMAIN}\
-@{DOMAIN}",String,Accounts,"Searching for the domain name of your organization can highlight places in code that deal with impersonation and often lead to routines that handle passwords. (e.g. EUROPE\tony,…)"
+@{DOMAIN}",String,Accounts,"Searching for the domain name of your organization can highlight places in code that deal with impersonation and often lead to routines that handle passwords. (e.g. EUROPE\tony,â€¦)"
 "-dad
 -wad
 -adm
@@ -10,7 +10,7 @@ admin                                                                           
 (Domain, Workstation or 
 Local Admins)",Most organizations follow a common naming scheme for accounts. Research your org and apply the proper pattern in searches to find hot spots in code and scripts that uses privileged accounts.
 $ANSIBLE_VAULT;,String,Ansible Secret (Encrypted),Ansible config files often contain very sensitive information. These values can be decrypted using the ansible-vault utility if you can also find the key
-"key, api-, cli-",String,API Tokens,"Access Keys, Storage Accounts Keys, API keys,…"
+"key, api-, cli-",String,API Tokens,"Access Keys, Storage Accounts Keys, API keys,â€¦"
 "aws_access_key_id
 aws_secret_access_key
 aws_session_token
@@ -24,7 +24,7 @@ eyJ,String,JWT,"JSON Web Token (JWT) - noisy,  just {"" base64 encoded"
 .keytab,File,Kerberos ,Keytab files contain Kerberos tickets to impersonate identities
 "<RSAKeyPair>
 <RSAKeyValue>",String,Key material,Common XML Representation of key material
-BEGIN * PRIVATE KEY,String,Keys,"There are lot of options and variations to look for, consider ECDSA, RSA,…  Simplified search might just look for ""PRIVATE KEY"""
+BEGIN * PRIVATE KEY,String,Keys,"There are lot of options and variations to look for, consider ECDSA, RSA,â€¦  Simplified search might just look for ""PRIVATE KEY"""
 svc-,String,Service Account,Service accounts commonly start with svc- and its common to find passwords close by. Research how  accounts are named in your organization.
 id_rsa,Filename,SSH Private Key,Or _rsa anything for that matter (or files under ~/.ssh/*
 "AccountName, AccountKey
@@ -42,9 +42,9 @@ Examples:  ~/.s3cfg, ~/.aws/credentials, ~/.bash_history, ~/.ssh/*, ~/.boto"
 "Filename contains keyword 
 (or a account name)",Filename,Various,"Filename can be an indicator (e.g. password.txt, svc-scanner.txt,  .vault_pass.txt)"
 "Files containing 
-only a one string/line",String,Various,"It’s not unusual to find files with nothing else then a single line,
+only a one string/line",String,Various,"Itâ€™s not unusual to find files with nothing else then a single line,
 which just might happen to be a password."
-secret,String,Various,"AccessKeys, Passphrases,…"
+secret,String,Various,"AccessKeys, Passphrases,â€¦"
 "server, host, hostname
 provider, auth",String,Various,"Searching for these will frequently highlight connection strings of all sorts, including database systems"
 "security_token
@@ -52,5 +52,5 @@ SecurityToken",String,Various,These  appear at times in Salesforce specific appl
 "password, passwd
 pwd, pass",String,Various ,"Connection Strings
 Proxy (proxy_pass), Passphrases (passphrase)"
-Authorization:,String,Web Resource,"HTTP Header - followed by Bearer, Basic, SharedKey, SharedKeyLite,…"
-Cookie:,String,Web Resource,HTTP Cookies
+Authorization:,String,Web Resource,"HTTP Header - followed by Bearer, Basic, SharedKey, SharedKeyLite,â€¦"
+Cookie:,String,Web Resource,HTTP Cookies 
