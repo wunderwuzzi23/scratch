@@ -1,0 +1,56 @@
+Keywords,Type,Asset,Comment
+"PersonalAccessToken, PAT",String,Access Token,Personal access tokens (API keys)
+"token, SessionToken",String,Access Token,Various access or session tokens
+"{DOMAIN}\
+@{DOMAIN}",String,Accounts,"Searching for the domain name of your organization can highlight places in code that deal with impersonation and often lead to routines that handle passwords. (e.g. EUROPE\tony,…)"
+"-dad
+-wad
+-adm
+admin                                                                                                                                                                                                                                                          ",string,"Accounts 
+(Domain, Workstation or 
+Local Admins)",Most organizations follow a common naming scheme for accounts. Research your org and apply the proper pattern in searches to find hot spots in code and scripts that uses privileged accounts.
+$ANSIBLE_VAULT;,String,Ansible Secret (Encrypted),Ansible config files often contain very sensitive information. These values can be decrypted using the ansible-vault utility if you can also find the key
+"key, api-, cli-",String,API Tokens,"Access Keys, Storage Accounts Keys, API keys,…"
+"aws_access_key_id
+aws_secret_access_key
+aws_session_token
+",String,AWS ,"The keys typically start with AKIA or ASIA.  Consider also looking for simplified version, as there are services on top of AWS that leverage other naming conventions, like access_key_id or secret_access_key"
+".pfx, .pem,.cert, .crt",File,Certificates,Certificate files
+MIIB,String,Encrypted Data,Take a closer manual look - these are ofte Enveloped CMS. Key might be close by.
+"""private_key"":
+""-----BEGIN PRIVATE KEY-----""",String,Google Cloud Platform,Service Account files for GCP contain the private key in this way
+"NTHASH, NTLM",String,Hashes,Who knows you might find Mimikatz files or other hashes in files!
+eyJ,String,JWT,"JSON Web Token (JWT) - noisy,  just {"" base64 encoded"
+.keytab,File,Kerberos ,Keytab files contain Kerberos tickets to impersonate identities
+"<RSAKeyPair>
+<RSAKeyValue>",String,Key material,Common XML Representation of key material
+BEGIN * PRIVATE KEY,String,Keys,"There are lot of options and variations to look for, consider ECDSA, RSA,…  Simplified search might just look for ""PRIVATE KEY"""
+svc-,String,Service Account,Service accounts commonly start with svc- and its common to find passwords close by. Research how  accounts are named in your organization.
+id_rsa,Filename,SSH Private Key,Or _rsa anything for that matter (or files under ~/.ssh/*
+"AccountName, AccountKey
+key_name",String,Storage,Frequently highlights an Azure Storage Account Key
+"SharedAccessSignature,
+sv=, sig=",String,Storage,"Shared Access Signatures, sv-, sig= found in URL"
+://{user}:{pwd}@{domain},String,URI,Sometimes credentials are directly provided in the URI.
+secretKey,String,Various,"Various, incl. AWS CloudFormation"
+clientSecret,String,Various,OAuth Secret 
+ConvertToSecureString,String,Various,Found often in PowerShell scripts (or C#) when secrets are processed
+Configuration files,File,Various,"Some config files that might contain credentials: *.config, *.webconfig, *.appconfig, appsettings.json, config.*, configuration.*,  .s3cmd.ini, .s3cfg"
+Dotfiles!,File,Various,"Dot files often contain configuration info and clear text creds.  
+Linux/Unix tools commonly do not encrypt secrets.
+Examples:  ~/.s3cfg, ~/.aws/credentials, ~/.bash_history, ~/.ssh/*, ~/.boto"
+"Filename contains keyword 
+(or a account name)",Filename,Various,"Filename can be an indicator (e.g. password.txt, svc-scanner.txt,  .vault_pass.txt)"
+"Files containing 
+only a one string/line",String,Various,"It’s not unusual to find files with nothing else then a single line,
+which just might happen to be a password."
+secret,String,Various,"AccessKeys, Passphrases,…"
+"server, host, hostname
+provider, auth",String,Various,"Searching for these will frequently highlight connection strings of all sorts, including database systems"
+"security_token
+SecurityToken",String,Various,These  appear at times in Salesforce specific application (but also others). Often code close by shows a password also.
+"password, passwd
+pwd, pass",String,Various ,"Connection Strings
+Proxy (proxy_pass), Passphrases (passphrase)"
+Authorization:,String,Web Resource,"HTTP Header - followed by Bearer, Basic, SharedKey, SharedKeyLite,…"
+Cookie:,String,Web Resource,HTTP Cookies
