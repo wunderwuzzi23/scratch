@@ -9,6 +9,7 @@ if [[ -v $1 ]]; then
 fi
 
 echo "Using command: aws $1"
+echo "Public Source IP Address:" $(curl --silent https://checkip.amazonaws.com)
 
 for PROFILE in $PROFILES
 do
