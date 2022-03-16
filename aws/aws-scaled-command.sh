@@ -21,14 +21,15 @@ do
     
     if [[ $IAM != "" ]]; then
       
-        echo $IAM
-        echo "INFO::Running command aws $CMD: "
-        
-        AWS_PROFILE=$PROFILE aws $1
-        
-    fi
+      echo $IAM
+      echo "INFO::Running command aws $CMD: "
+      
+      AWS_PROFILE=$PROFILE aws $1
+      echo COMMAND EXIT::$CMD::PROFILE::$PROFILE::USER::$IAM::EXIT CODE::$?
 
-    echo COMMAND EXIT::$CMD::PROFILE::$PROFILE::USER::$IAM::EXIT CODE::$?
+    else 
+      echo COMMAND EXIT::$CMD::PROFILE::$PROFILE::EXIT CODE::ERR_INVALID_CREDS
+    fi
     
 done
 
