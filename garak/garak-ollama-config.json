@@ -1,0 +1,27 @@
+{
+    "rest.RestGenerator":
+    {
+        "name": "ollama",
+        "uri": "http://localhost:11434/v1/chat/completions",
+        "method": "post",
+        "headers":{
+            "Content-Type": "application/json"
+        },
+        "req_template_json_object":{
+            "model": "phi3:3.8b",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant."
+                },
+                {
+                    "role": "user",
+                    "content": "$INPUT"
+                }
+            ]
+        },
+        "response_json": true,
+        "response_json_field": "$.choices[0].message.content",
+        "request_timeout": 30
+    }
+}

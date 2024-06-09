@@ -1,0 +1,24 @@
+{
+    "rest.RestGenerator":
+    {
+        "name": "wuzzi chat ",
+        "uri": "http://localhost:5000/chat",
+        "method": "post",
+        "headers":{
+            "Authorization": "$KEY",
+            "Content-Type": "application/json"
+        },
+        "req_template_json_object":{
+            "api_provider": "groq",
+            "chat_history": [
+                {
+                    "role": "user",
+                    "content": "$INPUT!"
+                }
+            ]
+        },
+        "response_json": true,
+        "response_json_field": "message",
+        "request_timeout": 20
+    }
+}
