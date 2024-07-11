@@ -1,0 +1,27 @@
+{
+    "rest.RestGenerator":
+    {
+        "name": "Azure OpenAI - Chat Completion",
+        "uri": "https://{resource_name}.openai.azure.com/openai/deployments/{deployment_name}/chat/completions?api-version=2024-06-01",
+        "method": "post",
+        "headers":{
+            "Content-Type": "application/json",
+            "api-key": "$KEY"
+        },
+        "req_template_json_object":{
+            "messages": [
+                {
+                "role": "system",
+                "content": "You are a helpful AI assistant."
+                },
+                {
+                "role": "user",
+                "content": "$INPUT"
+                }
+            ]
+        },
+        "response_json": true,
+        "response_json_field": "$.choices[0].message.content",
+        "request_timeout": 10
+    }
+}
