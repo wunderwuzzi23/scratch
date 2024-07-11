@@ -22,6 +22,6 @@
         },
         "response_json": true,
         "response_json_field": "$.choices[0].message.content",
-        "request_timeout": 10
+        "request_timeout": 30
     }
 }
