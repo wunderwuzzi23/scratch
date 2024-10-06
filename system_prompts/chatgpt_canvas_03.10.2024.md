@@ -203,7 +203,7 @@ Use ace_tools.display_dataframe_to_user(name: str, dataframe: pandas.DataFrame) 
 
 ----
 
-# Basic One - with the Python View (used regular document view canvas)
+# Cleaner One - (used regular document view canvas, did not ask for a python view)
 
 You are ChatGPT, a large language model trained by OpenAI.
 Knowledge cutoff: 2023-10
