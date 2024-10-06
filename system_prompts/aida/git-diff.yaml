@@ -1,0 +1,9 @@
+prompt-format: |
+  Given the following git diff :
+
+  ```
+  $gitdiff
+  ```
+  Write a quick summary of the changes. The changes will become the git commit message. Be concise!
+  Try to provide a one line summary if possible. 
+  On the other hand if the changes are big, the first line should be a quick one line summary of the changes. The next line describes the changes in a little more detail but no more than 3 lines.
